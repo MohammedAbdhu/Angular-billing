@@ -1,0 +1,27 @@
+.login-container {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url("../../assets/background-img.jpg");
+    background-position: center;
+}
+
+.login-box-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-container {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    height: 390px;
+    width: 485px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    width: 345px;
+}
