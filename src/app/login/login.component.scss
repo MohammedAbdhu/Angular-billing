@@ -16,10 +16,11 @@
 .box-container {
     background: transparent;
     backdrop-filter: blur(10px);
-    height: 390px;
-    width: 485px;
+    height: 55%;
+    width: 30%;
     justify-content: center;
     align-items: center;
+    gap: 15%;
 }
 
 .input-container {
