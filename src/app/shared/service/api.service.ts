@@ -9,7 +9,7 @@ export class ApiService {
   private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
-  getBillingModel(){
-    return this.http.get(`${this.apiUrl + environment.base_value.get_billing_models}`)
+  getModel(){
+    return this.http.get(`${this.apiUrl + environment.base_value.get_models}`)
   }
 }

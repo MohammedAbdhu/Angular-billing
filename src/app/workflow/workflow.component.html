@@ -1,25 +1,31 @@
 <div>
-  <mat-toolbar>
-    <div>
+  <mat-toolbar style="height: 50px; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 5px;">
       <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>My App</span>
+      <span class="title">{{header}}</span>
     </div>
-    <div></div>
-    <span class="example-spacer"></span>
-    
+    <div>
+        <button mat-icon-button (click)="themeSet()">
+          <mat-icon *ngIf="isDarkMode">wb_sunny</mat-icon>
+          <mat-icon *ngIf="!isDarkMode" style="rotate: 145deg;">brightness_3</mat-icon>
+        </button>
+    </div>
   </mat-toolbar>
   <mat-drawer-container style="height: 90vh; border: solid 1px #d5d5d5;" class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <div *ngFor="let data of sideNavList" class="side-nav-option">
-        <mat-icon>{{data.icon}}</mat-icon>
-        <span>{{data.name}}</span>
+      <div>
+        <div *ngFor="let data of sideNavList" class="side-nav-option" [ngClass]="{ 'active-link': currentRoute === data.url }"
+          (click)="navigate(data.url, data.name)">
+          <mat-icon>{{ data.icon }}</mat-icon>
+          <span>{{ data.name }}</span>
+        </div>
       </div>
     </mat-drawer>
   
     <div class="example-sidenav-content">
-      
+      <router-outlet></router-outlet>
     </div>
   
   </mat-drawer-container>

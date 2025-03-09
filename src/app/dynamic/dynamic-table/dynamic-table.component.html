@@ -1,0 +1,29 @@
+<div style="width: 100%;height: 100%;">
+    <div *ngIf="showTable" fxLayout="column" fxLayoutGap="5px" style="max-height: 100%;">
+        <div class="rff-mat-table-overflow">
+            <table mat-table [dataSource]="dataSource" matSort class="scrollable-table">
+                <ng-container *ngFor="let col of columnData; let colIndex = index;"
+                    matColumnDef="{{displayColumns[colIndex]}}">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                        [disabled]="sortColumn.includes(displayColumns[colIndex])" style="justify-content: flex-start;">
+                        <span
+                            *ngIf="!(iconHeader?.indexOf(displayColumns[colIndex]) > -1)">{{displayColumns[colIndex]}}</span>
+                    </th>
+                    <td mat-cell *matCellDef="let element"
+                        (click)="eventColumn?.indexOf(displayColumns[colIndex]) > -1 ? rowEventTrigger(displayColumns[colIndex], element) : rowEventTrigger('row',element)">
+                        <span *ngIf="!(iconColumn?.indexOf(displayColumns[colIndex]) > -1)"
+                            class="table-text">{{element[col]}}</span>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayColumns;sticky: true;"
+                    class="manage-table-header-row text-white"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayColumns;" class="manage-table-row Refer-font-family"
+                    [class.selected]="selectedRow === row" (click)="onRowClick(row)">
+                </tr>
+            </table>
+        </div>
+        <mat-paginator class="reff-pagination" (page)="pagination !== null ? rowEventTrigger('pagination', $event) : ''"
+            [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="[10, 15, 20, 50, 100]"
+            showFirstLastButtons></mat-paginator>
+    </div>
+</div>

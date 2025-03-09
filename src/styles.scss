@@ -1,20 +1,43 @@
 // Global styles
 body {
-  padding: 0 !important;
-  margin: 0 !important;
-  height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100%;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.full-container{
+.full-container {
     height: 100%;
     width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 6px !important;
+    height: 8px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a9a9a9;
+    border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(138, 136, 136);
 }

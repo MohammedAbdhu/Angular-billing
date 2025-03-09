@@ -1,0 +1,15 @@
+<div>
+    <div style="padding: 5px 5px 0 5px;">
+        <span>
+            <mat-form-field class="example-full-width" appearance="outerline">
+                <input matInput placeholder="Search">
+            </mat-form-field>
+        </span>
+    </div>
+    <div style="padding-top: 5px;">
+        <app-dynamic-table [component]="'model'" [tableData]="modelsData" [displayColumns]="displayColumn"
+            [iconHeader]="iconHeader" [iconColumn]="iconColumn" [columnData]="column" [eventColumn]="eventColumn"
+            [sortColumn]="sortColumn" [pagination]="null" (rowAction)="rowAction($event)">
+        </app-dynamic-table>
+    </div>
+</div>
