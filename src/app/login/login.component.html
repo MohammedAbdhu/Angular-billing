@@ -1,22 +1,21 @@
 <div class="login-container">
+    <div class="blur-circle top-right"></div>
+    <div class="blur-circle bottom-left"></div>
+    
     <div class="login-box-container">
         <mat-card class="box-container">
-            <div style="font-weight: 600; font-size: 25px; color: #064578;">Login</div>
+            <div class="login-title">Login</div>
             <div>
-                <div>
-                    <mat-form-field class="input-container">
-                        <mat-label>Username</mat-label>
-                        <input matInput placeholder="Enter your username">
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field class="input-container">
-                        <mat-label>Password</mat-label>
-                        <input matInput placeholder="Enter your password">
-                    </mat-form-field>
-                </div>
+                <mat-form-field class="input-container">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Enter your username">
+                </mat-form-field>
+                <mat-form-field class="input-container">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Enter your password">
+                </mat-form-field>
                 <div style="text-align: center;">
-                    <button mat-raised-button style="background: #2fffff; color: #0658be;" (click)="login()">Login</button>
+                    <button mat-raised-button class="login-button" (click)="login()">Login</button>
                 </div>
             </div>
         </mat-card>

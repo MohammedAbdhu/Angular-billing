@@ -1,14 +1,16 @@
-import { Component, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
+import { Component, NO_ERRORS_SCHEMA, OnInit, ViewEncapsulation } from '@angular/core';
 import { ApiService } from '../../../shared/service/api.service';
 import { DynamicTableComponent } from '../../../dynamic/dynamic-table/dynamic-table.component';
+import { MaterialModule } from '../../../shared/common/material.module';
 
 @Component({
   selector: 'app-stock-models',
-  imports: [DynamicTableComponent],
+  imports: [DynamicTableComponent, MaterialModule],
   standalone: true,
   templateUrl: './stock-models.component.html',
   styleUrl: './stock-models.component.scss',
-  schemas: [NO_ERRORS_SCHEMA] 
+  schemas: [NO_ERRORS_SCHEMA],
+  // providers: ViewEncapsulation.None
 })
 export class StockModelsComponent implements OnInit {
   modelsData: any[] = [];
@@ -18,6 +20,9 @@ export class StockModelsComponent implements OnInit {
   iconColumn: string[] = [];
   eventColumn: string[] = [];
   sortColumn: string[] = [];
+  length = 0;
+  start = 0
+  pageSize = 50
   
 
 
@@ -35,7 +40,8 @@ export class StockModelsComponent implements OnInit {
   getAllModels(){
     this.apiService.getModel().subscribe((res: any) => {
       this.modelsData = res;
-      console.log(this.column.length)
+      this.length = this.modelsData.length
+      console.log(this.length)
       for(let i = 0; i <= this.column.length; i++){
         this.modelsData.map((data) => {
           data[this.displayColumn[i]] = data[this.column[i]];

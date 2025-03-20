@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, RouterOutlet, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { RouterOutlet } from '@angular/router';
 import { MaterialModule } from './shared/common/material.module';
 
 @Component({

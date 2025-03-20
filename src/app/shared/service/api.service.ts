@@ -9,7 +9,17 @@ export class ApiService {
   private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
+  getLookUpTerms(groupName: string){
+    return this.http.get(`${this.apiUrl + environment.base_value.look_up + '?groupNames=' + groupName}`)
+  }
+
+  //model
   getModel(){
     return this.http.get(`${this.apiUrl + environment.base_value.get_models}`)
+  }
+
+  //purchase
+  getPurchase(){
+    return this.http.get(`${this.apiUrl + environment.base_value.get_purchase_list}`)
   }
 }

@@ -16,6 +16,7 @@ const routes: Routes = [
       { path: 'models', loadComponent: () => import('./workflow/billing-workflow/stock-models/stock-models.component').then(m => m.StockModelsComponent) },
       { path: 'invoice', loadComponent: () => import('./workflow/billing-workflow/invoice/invoice.component').then(m => m.InvoiceComponent) },
       { path: 'dashboard', loadComponent: () => import('./workflow/billing-workflow/dashboard/dashboard.component').then(m => m.DashboardComponent) },
+      { path: 'purchase', loadComponent: () => import('./workflow/billing-workflow/purchases/purchases.component').then(m => m.PurchasesComponent) },
       { path: '', redirectTo: 'billing', pathMatch: 'full' }
     ]
   },

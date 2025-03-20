@@ -1,3 +1,5 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; 
+
 // Global styles
 body {
     padding: 0 !important;
@@ -9,6 +11,7 @@ html,
 body {
     height: 100%;
     overflow: hidden;
+    --mat-sys-corner-large: 10px;
 }
 
 body {
@@ -41,3 +44,57 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(138, 136, 136);
 }
+
+:root {
+    /* 🌞 Light Theme */
+    --background-color: white;
+    --primary-color: #007cbf;
+    --text-color: black;
+  }
+  
+  .dark-theme {
+    /* 🌙 Dark Theme */
+    --background-color: black;
+    --primary-color: #dfb0ef;
+    --text-color: white;
+  }
+  
+  /* Apply these variables to Angular Material */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .mat-mdc-button, .mat-mdc-raised-button {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+  }
+  
+  .mat-form-field {
+    color: var(--text-color) !important;
+  }
+  
+
+.mat-form-field {
+    height: 35px; /* Set the desired height */
+  }
+  
+  .mat-form-field-wrapper {
+    padding-bottom: 0px !important; /* Remove extra padding */
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    height: 35px !important; /* Adjust outline height */
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 5px 0 !important; /* Reduce padding inside input */
+    min-height: 0px !important;
+  }
+  
+  input.mat-input-element {
+    height: 30px !important; /* Adjust input height */
+    padding: 5px !important;
+    font-size: 14px; /* Adjust text size */
+  }
+  

@@ -14,11 +14,12 @@ import { ThemeService } from '../shared/service/theme.service';
 export class WorkflowComponent {
   showFiller = false;
   sideNavList = [
-    {icon: 'dashboard', name: 'Dashboard', url: '/workflow'},
+    {icon: 'dashboard', name: 'Dashboard', url: '/workflow/dashboard'},
+    {icon: 'shopping_cart', name: 'Purchase', url: '/workflow/purchase'},
     {icon: 'list', name: 'Billing', url: '/workflow/billing'},
     {icon: 'supervisor_account', name: 'Customers', url: '/workflow/customer'},
+    {icon: 'shopping_cart', name: 'Models', url: '/workflow/models'},
     {icon: 'notes', name: 'Invoice', url: '/workflow/invoice'},
-    {icon: 'shopping_cart', name: 'Models', url: '/workflow/models'}
   ]
   currentRoute: string;
   header = 'Billing';
@@ -38,6 +39,6 @@ export class WorkflowComponent {
 
   themeSet(){
     this.isDarkMode = !this.isDarkMode;
-    this.themeService.toggleTheme(this.isDarkMode);
+    this.themeService.toggleTheme();
   }
 }

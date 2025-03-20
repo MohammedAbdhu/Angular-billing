@@ -1,9 +1,10 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { Component, EventEmitter, Input, input, OnChanges, Output, SimpleChanges, ViewChild, viewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, input, OnChanges, Output, SimpleChanges, ViewChild, viewChild } from '@angular/core';
 import { MaterialModule } from '../../shared/common/material.module';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { CommonModule } from '@angular/common';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-dynamic-table',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './dynamic-table.component.html',
   styleUrl: './dynamic-table.component.scss'
 })
-export class DynamicTableComponent implements OnChanges {
+export class DynamicTableComponent implements OnChanges, AfterViewInit {
   displayedColumn: any;
 
   @Input() tableData: any;
@@ -33,10 +34,18 @@ export class DynamicTableComponent implements OnChanges {
   pageLength = null;
   pageSize = null;
   selectedRow: any;
+  paginator: MatPaginator | null | undefined;
 
   @ViewChild(MatSort)
   set sort(value: MatSort) {
     this.dataSource.sort = value;
+  }
+
+  @ViewChild(MatPaginator) set matPaginator(paginator: MatPaginator) {
+    if (paginator) {
+      this.paginator = paginator;
+      this.dataSource.paginator = this.paginator;
+    }
   }
 
   constructor() { }
@@ -65,6 +74,12 @@ export class DynamicTableComponent implements OnChanges {
           }
         }
       }
+    }
+  }
+
+  ngAfterViewInit() {
+    if (this.paginator) {
+      this.dataSource.paginator = this.paginator;
     }
   }
 

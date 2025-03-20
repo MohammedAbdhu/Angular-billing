@@ -22,7 +22,7 @@
                 </tr>
             </table>
         </div>
-        <mat-paginator class="reff-pagination" (page)="pagination !== null ? rowEventTrigger('pagination', $event) : ''"
+        <mat-paginator #paginator class="reff-pagination" (page)="pagination ? rowEventTrigger('pagination', $event) : null"
             [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="[10, 15, 20, 50, 100]"
             showFirstLastButtons></mat-paginator>
     </div>
