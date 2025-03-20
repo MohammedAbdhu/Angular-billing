@@ -1,0 +1,1 @@
+import{Cb as s,cb as n}from"./chunk-TQJMELAP.js";var t=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=n({type:o,selectors:[["app-purchases"]],decls:1,vars:0,template:function(e,p){e&1&&s(0,"div")},encapsulation:2})};export{t as PurchasesComponent};

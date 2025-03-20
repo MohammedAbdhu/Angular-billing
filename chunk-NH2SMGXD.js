@@ -1,0 +1,1 @@
+import{Ab as t,Bb as i,Ub as c,cb as o}from"./chunk-TQJMELAP.js";var p=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=o({type:n,selectors:[["app-invoice"]],decls:2,vars:0,template:function(e,s){e&1&&(t(0,"p"),c(1,"invoice works!"),i())},encapsulation:2})};export{p as InvoiceComponent};

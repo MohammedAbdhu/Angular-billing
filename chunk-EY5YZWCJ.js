@@ -1,0 +1,1 @@
+import{Ab as n,Bb as s,Ub as m,cb as o}from"./chunk-TQJMELAP.js";var r=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-customer"]],decls:2,vars:0,template:function(e,p){e&1&&(n(0,"p"),m(1,"customer works!"),s())},encapsulation:2})};export{r as CustomerComponent};
