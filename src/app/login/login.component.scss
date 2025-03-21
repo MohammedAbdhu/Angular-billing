@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color: #f0f4f8;
+    background-color: var(--background-color);
     overflow: hidden;
 }
 
@@ -19,7 +19,7 @@
 .top-right {
     width: 520px;
     height: 330px;
-    background: #007cbf;
+    background: var(--login-top);
     top: -50px;
     right: -132px;
 }
@@ -27,7 +27,7 @@
 .bottom-left {
     width: 520px;
     height: 330px;
-    background: rgba(246, 79, 89, 0.6);
+    background: var(--login-bottom);
     bottom: -62px;
     left: -87px;
 }

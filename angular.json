@@ -25,6 +25,7 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "baseHref": "/Angular-billing/",
             "assets": [
               {
                 "glob": "**/*",
@@ -38,6 +39,7 @@
             ],
             "scripts": []
           },
+
           "configurations": {
             "production": {
               "budgets": [

@@ -10,7 +10,7 @@ import { MaterialModule } from '../../../shared/common/material.module';
   templateUrl: './stock-models.component.html',
   styleUrl: './stock-models.component.scss',
   schemas: [NO_ERRORS_SCHEMA],
-  // providers: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class StockModelsComponent implements OnInit {
   modelsData: any[] = [];

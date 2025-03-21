@@ -1,5 +1,5 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, EventEmitter, Input, input, OnChanges, Output, SimpleChanges, ViewChild, viewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, input, OnChanges, Output, SimpleChanges, ViewChild, viewChild, ViewEncapsulation } from '@angular/core';
 import { MaterialModule } from '../../shared/common/material.module';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -11,7 +11,8 @@ import { MatPaginator } from '@angular/material/paginator';
   imports: [MaterialModule, CommonModule],
   standalone: true,
   templateUrl: './dynamic-table.component.html',
-  styleUrl: './dynamic-table.component.scss'
+  styleUrl: './dynamic-table.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class DynamicTableComponent implements OnChanges, AfterViewInit {
   displayedColumn: any;

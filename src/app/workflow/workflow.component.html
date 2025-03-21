@@ -1,20 +1,20 @@
 <div>
-  <mat-toolbar style="height: 50px; justify-content: space-between;">
+  <mat-toolbar class="theme" style="height: 50px; justify-content: space-between;">
     <div style="display: flex; align-items: center; gap: 5px;">
       <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
+        <mat-icon class="icon-color">menu</mat-icon>
       </button>
       <span class="title">{{header}}</span>
     </div>
     <div>
         <button mat-icon-button (click)="themeSet()">
-          <mat-icon *ngIf="isDarkMode">wb_sunny</mat-icon>
-          <mat-icon *ngIf="!isDarkMode" style="rotate: 145deg;">brightness_3</mat-icon>
+          <mat-icon *ngIf="!isDarkMode" style="color: gold;">wb_sunny</mat-icon>
+          <mat-icon *ngIf="isDarkMode" style="rotate: 145deg;">brightness_3</mat-icon>
         </button>
     </div>
   </mat-toolbar>
-  <mat-drawer-container style="border: solid 1px #d5d5d5;" class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+  <mat-drawer-container style="height: calc(100vh - 35px);" class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav theme" mode="side">
       <div>
         <div *ngFor="let data of sideNavList" class="side-nav-option" [ngClass]="{ 'active-link': currentRoute === data.url }"
           (click)="navigate(data.url, data.name)">

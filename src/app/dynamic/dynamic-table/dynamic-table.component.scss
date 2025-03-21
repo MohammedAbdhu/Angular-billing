@@ -3,7 +3,7 @@ mat-mdc-paginator-container{
 }
 
 .manage-table-row {
-    font-size: 12px;
+    font-size: 12px !important;
     min-height: 40px;
     height: 40px !important;
 
@@ -13,12 +13,12 @@ mat-mdc-paginator-container{
 }
 
 .manage-table-header-row {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    background: #007cbf;
-    color: white;
-    height: 35px;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2 !important;
+    background: #007cbf !important;
+    color: white !important;
+    height: 35px !important;
 }
 
 .manage-table-row:nth-child(odd) {

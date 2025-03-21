@@ -1,4 +1,4 @@
-@import '@angular/material/prebuilt-themes/indigo-pink.css'; 
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 // Global styles
 body {
@@ -50,51 +50,74 @@ body {
     --background-color: white;
     --primary-color: #007cbf;
     --text-color: black;
-  }
-  
-  .dark-theme {
+    --login-top: #007cbf;
+    --login-bottom: #f64f5999;
+}
+
+.dark-theme {
     /* 🌙 Dark Theme */
     --background-color: black;
     --primary-color: #dfb0ef;
     --text-color: white;
-  }
-  
-  /* Apply these variables to Angular Material */
-  body {
+    --login-top: #8274c3;
+    --login-bottom: #905eab;
+}
+
+/* Apply these variables to Angular Material */
+body {
     background-color: var(--background-color);
     color: var(--text-color);
-  }
-  
-  .mat-mdc-button, .mat-mdc-raised-button {
+    font-size: 12px
+}
+
+.theme {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.mat-mdc-button,
+.mat-mdc-raised-button {
     background-color: var(--primary-color) !important;
     color: var(--text-color) !important;
-  }
-  
-  .mat-form-field {
-    color: var(--text-color) !important;
-  }
-  
+}
 
 .mat-form-field {
-    height: 35px; /* Set the desired height */
-  }
-  
-  .mat-form-field-wrapper {
-    padding-bottom: 0px !important; /* Remove extra padding */
-  }
-  
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-    height: 35px !important; /* Adjust outline height */
-  }
-  
-  .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 5px 0 !important; /* Reduce padding inside input */
-    min-height: 0px !important;
-  }
-  
-  input.mat-input-element {
-    height: 30px !important; /* Adjust input height */
+    color: var(--text-color) !important;
+}
+
+.custome-wrapper {
+    .mat-mdc-form-field-subscript-wrapper {
+        height: 0 !important;
+    }
+}
+
+.mat-mdc-text-field-wrapper {
+    height: 35px !important;
+    padding: 0 10px !important;
+}
+
+.mdc-text-field--outlined .mat-mdc-form-field-infix,
+.mdc-text-field--no-label .mat-mdc-form-field-infix {
     padding: 5px !important;
-    font-size: 14px; /* Adjust text size */
-  }
-  
+}
+
+.mat-custome-pagination {
+    .mdc-notched-outline {
+        height: 30px;
+        top: 3px
+    }
+}
+
+.mat-mdc-option {
+    min-height: 40px !important;
+}
+
+.mat-mdc-option .mdc-list-item__primary-text {
+    font-size: 13px !important;
+}
+
+.icon-color{
+    // .mat-icon{
+    color: var(--text-color) !important;
+    // }
+}
